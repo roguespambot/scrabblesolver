@@ -6,9 +6,13 @@ var scrabbleScorer = function(wordInput) {
   'H': 4, 'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8, 'Q': 10, 'Z': 10};
 
   for (var i = 0; i < wordInput.length; i++) {
-    scoreTotal = scoreTotal + letterValues[stringToCheck[i]]
-  }
+      scoreTotal = scoreTotal + letterValues[stringToCheck[i]]
+    }
+  if(isNaN(scoreTotal) === true) {
+    return "invalid"
+  } else {
   return scoreTotal;
+  }
 }
 
 $(document).ready(function() {
@@ -16,7 +20,9 @@ $(document).ready(function() {
     var word = $("input#word").val();
     var result = scrabbleScorer(word);
 
+     $(".word").text(word);
      $(".scrabbleScore").text(result);
+
 
      $("#result").show();
      event.preventDefault();

@@ -42,4 +42,8 @@ describe('scrabbleScorer', function() {
   it("handles input of lowercase letters", function(){
     scrabbleScorer("gigantic").should.equal(12);
   });
+
+  it("returns invalid if non-alphabetical entry", function() {
+    scrabbleScorer("12").should.equal("invalid");
+  });
 });

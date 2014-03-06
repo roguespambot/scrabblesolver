@@ -27,7 +27,7 @@ h1{
   color: white;
 }
 
-.scrabbleScore{
+.scrabbleScore, .word{
   color: #FF3399;
   font-weight: bold;
 }
